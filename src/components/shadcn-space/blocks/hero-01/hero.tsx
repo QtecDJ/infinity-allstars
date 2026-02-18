@@ -81,7 +81,7 @@ function HeroSection({
         }}
       />
       <div className="w-full h-full relative">
-        <div className="relative w-full pt-0 md:pt-20 pb-10">
+        <div className="relative w-full pt-24 md:pt-20 pb-10">
           <div className="container mx-auto relative z-10">
             <div className="flex flex-col max-w-5xl mx-auto gap-8">
               <div className="relative flex flex-col text-center items-center sm:gap-6 gap-4">

@@ -78,7 +78,7 @@ export function Videos() {
 
       {/* Video Modal */}
       <Dialog open={!!selectedVideo} onOpenChange={() => setSelectedVideo(null)}>
-        <DialogContent className="max-w-[550px] p-0 bg-black border-0">
+        <DialogContent className="max-w-[550px] p-0 bg-black border-0 max-h-[95vh] md:max-h-[90vh]">
           <DialogTitle className="sr-only">
             {selectedVideo?.title || 'Video'}
           </DialogTitle>
@@ -86,7 +86,7 @@ export function Videos() {
             {selectedVideo?.platform === 'instagram' ? 'Instagram' : 'TikTok'} Video
           </DialogDescription>
           {selectedVideo && (
-            <div className="relative w-full bg-black overflow-hidden rounded-lg" style={{ height: '85vh', maxHeight: '850px' }}>
+            <div className="relative w-full bg-black overflow-hidden rounded-lg" style={{ height: '70vh', maxHeight: '850px' }}>
               {selectedVideo.platform === 'instagram' ? (
                 <iframe
                   src={`https://www.instagram.com/reel/${getInstagramId(selectedVideo.url)}/embed`}
