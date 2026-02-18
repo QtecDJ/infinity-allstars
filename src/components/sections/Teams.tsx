@@ -114,7 +114,7 @@ export function Teams() {
       </div>
 
       <Dialog open={!!selectedTeam} onOpenChange={() => setSelectedTeam(null)}>
-        <DialogContent className="max-w-2xl">
+        <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle className="text-2xl">{selectedTeam?.name}</DialogTitle>
             <DialogDescription>
