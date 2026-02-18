@@ -1,0 +1,166 @@
+{
+  "hero": {
+    "title": "Infinity Cheer Allstars",
+    "subtitle": "Cheerleading at TSV Plattenhardt: Team Spirit, Respect, and Community.",
+    "motto": "WE ARE ONE.",
+    "btnDiscover": "Discover Teams",
+    "btnTrial": "Trial Training",
+    "scrollDown": "Scroll to next section"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "Program",
+    "teams": "Teams",
+    "achievements": "Achievements",
+    "events": "Events",
+    "gallery": "Gallery",
+    "videos": "Videos",
+    "join": "Join Us"
+  },
+  "about": {
+    "title": "About",
+    "titleHighlight": "Infinity Cheer Allstars",
+    "intro": "The Infinity Cheer Allstars is the cheerleading program at TSV Plattenhardt. Under our guiding principle \"WE ARE ONE\", we combine athletic performance with team spirit, respect, and a strong sense of community.",
+    "stats": {
+      "teams": "Teams (CCVD)",
+      "members": "Current Members",
+      "founded": "Founded"
+    },
+    "program": {
+      "title": "Our Program",
+      "description": "In our training sessions, we combine elements of cheerleading, acrobatics, gymnastics, dance, and strength training. Our teams regularly compete at state championships, representing TSV Plattenhardt."
+    },
+    "values": {
+      "title": "Our Values",
+      "fairness": "Fairness and responsibility",
+      "support": "Mutual support within the team",
+      "joy": "Joy in sports together",
+      "unity": "Every athlete is part of the team: every role matters"
+    }
+  },
+  "teams": {
+    "title": "Our",
+    "titleHighlight": "Teams",
+    "subtitle": "Age appropriate development and seamless progression from beginners to competitive athletes.",
+    "btnDetails": "Details",
+    "sparkles": {
+      "name": "Infinity Sparkles",
+      "description": "Our development team for our youngest athletes. Here, cheerleading fundamentals are taught with joy and safety, building first movement experiences.",
+      "level": "Minis (CCVD)",
+      "ageGroup": "Minis",
+      "birthYears": "Born 2021 to 2019"
+    },
+    "princesses": {
+      "name": "Infinity Princesses",
+      "description": "Our first competition team. Technique, expression, and teamwork are continuously developed here.",
+      "level": "Primary (CCVD)",
+      "ageGroup": "Primary",
+      "birthYears": "Born 2019 to 2014"
+    },
+    "divas": {
+      "name": "Infinity Divas",
+      "description": "A performance-oriented competition team where athletes learn more advanced elements and continue their athletic journey.",
+      "level": "Youth (CCVD)",
+      "ageGroup": "Youth",
+      "birthYears": "Born 2015 to 2012"
+    },
+    "kingsQueens": {
+      "name": "Infinity Kings & Queens",
+      "description": "Our senior competition team trains at an advanced level.",
+      "level": "Senior (CCVD)",
+      "ageGroup": "Senior",
+      "birthYears": "Born 2011 and earlier"
+    },
+    "dialog": {
+      "trainingInfo": "Training Information",
+      "coaches": "Coaches",
+      "coachesFallback": "Coaching Team",
+      "trainingTimes": "Training Times",
+      "trainingTimesFallback": "Upon request",
+      "locations": "Training Location",
+      "locationsFallback": "TSV Plattenhardt"
+    }
+  },
+  "achievements": {
+    "title": "Our",
+    "titleHighlight": "Achievements",
+    "subtitle": "Proud of our teams' accomplishments achieved with fairness, team spirit, and passion.",
+    "filterLabel": "Filter by year",
+    "allYears": "All Years"
+  },
+  "gallery": {
+    "title": "Gallery",
+    "subtitle": "Impressions from training, performances, and competitions.",
+    "categories": {
+      "all": "All",
+      "competition": "Competition",
+      "training": "Training",
+      "success": "Achievements",
+      "team": "Team"
+    }
+  },
+  "videos": {
+    "title": "Our",
+    "titleHighlight": "Videos",
+    "subtitle": "Experience our teams in action: training, competitions, and special moments."
+  },
+  "events": {
+    "title": "Events",
+    "titleHighlight": "2026",
+    "subtitle": "Experience our cheerleading events live",
+    "showcase": {
+      "date": "Sunday, March 1, 2026",
+      "location": "Höhensporthalle Weilerhau",
+      "time": "4:00 PM",
+      "description": "Our annual showcase event"
+    }
+  },
+  "cta": {
+    "title": "Join",
+    "titleHighlight": "Infinity Cheer Allstars",
+    "subtitle": "Trial training is available by prior registration. No previous experience required.",
+    "benefits": {
+      "acrobatics": {
+        "title": "Acrobatics & Stunts",
+        "description": "Learn safely step by step"
+      },
+      "teamSpirit": {
+        "title": "Team Spirit",
+        "description": "WE ARE ONE: stronger together"
+      },
+      "competitions": {
+        "title": "Competitions & Performances",
+        "description": "Championships and events"
+      },
+      "strength": {
+        "title": "Strength & Technique",
+        "description": "Gymnastics, dance, and conditioning"
+      }
+    },
+    "interested": {
+      "title": "Interested in Cheerleading?",
+      "description": "All you need to bring: sports clothes, motivation, and team spirit. Everything else we'll teach you step by step during training.",
+      "btnTrial": "Request Trial Training",
+      "btnInfo": "Info on TSV Website"
+    }
+  },
+  "footer": {
+    "tagline": "Cheerleading at TSV Plattenhardt",
+    "description": "The Infinity Cheer Allstars stand for team spirit, athletic dedication, and community. Under the motto \"WE ARE ONE\", we train from youth to senior level.",
+    "sections": {
+      "contact": "Contact",
+      "tsvLinks": "TSV Plattenhardt"
+    },
+    "contact": {
+      "email": "Email",
+      "phone": "Phone",
+      "address": "Address",
+      "addressLine1": "TSV Plattenhardt e.V.",
+      "addressLine2": "Höhensporthalle Weilerhau",
+      "addressLine3": "70794 Filderstadt, Germany",
+      "mainContact": "Main Contact",
+      "businessOffice": "Business Office"
+    },
+    "copyright": "© {{year}} Infinity Cheer Allstars, TSV Plattenhardt e.V. All rights reserved."
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "hero": {
+    "title": "Infinity Cheer Allstars",
+    "subtitle": "Cheerleading im TSV Plattenhardt: Teamgeist, Respekt und Gemeinschaft.",
+    "motto": "WE ARE ONE.",
+    "btnDiscover": "Teams entdecken",
+    "btnTrial": "Probetraining",
+    "scrollDown": "Zum nächsten Abschnitt scrollen"
+  },
+  "nav": {
+    "home": "Start",
+    "about": "Programm",
+    "teams": "Teams",
+    "achievements": "Erfolge",
+    "events": "Events",
+    "gallery": "Galerie",
+    "videos": "Videos",
+    "join": "Mitmachen"
+  },
+  "about": {
+    "title": "Über",
+    "titleHighlight": "Infinity Cheer Allstars",
+    "intro": "Die Infinity Cheer Allstars sind das Cheerleading-Programm im TSV Plattenhardt. Unter unserem Leitgedanken \"WE ARE ONE\" verbinden wir sportliche Leistungsbereitschaft mit Teamgeist, Respekt und einem starken Gemeinschaftsgefühl.",
+    "stats": {
+      "teams": "Teams (CCVD)",
+      "members": "Aktuelle Mitglieder",
+      "founded": "Gründung"
+    },
+    "program": {
+      "title": "Unser Programm",
+      "description": "In unseren Trainingseinheiten verbinden wir Elemente aus Cheerleading, Akrobatik, Turnen, Tanz und Krafttraining. Unsere Teams nehmen regelmäßig an Landesmeisterschaften teil und vertreten dort den TSV Plattenhardt."
+    },
+    "values": {
+      "title": "Unsere Werte",
+      "fairness": "Fairness und Verantwortungsbewusstsein",
+      "support": "Gegenseitige Unterstützung im Team",
+      "joy": "Freude am gemeinsamen Sport",
+      "unity": "Jede Athletin ist Teil des Teams: jede Rolle ist wichtig"
+    }
+  },
+  "teams": {
+    "title": "Unsere",
+    "titleHighlight": "Teams",
+    "subtitle": "Altersgerechte Förderung und ein kontinuierlicher Übergang vom Einstieg bis in den wettkampforientierten Bereich.",
+    "btnDetails": "Details",
+    "sparkles": {
+      "name": "Infinity Sparkles",
+      "description": "Unser Aufbauteam für die jüngsten Sportlerinnen. Hier werden mit viel Freude und Sicherheit die Grundlagen des Cheerleadings vermittelt und erste Bewegungserfahrungen gesammelt.",
+      "level": "Minis (CCVD)",
+      "ageGroup": "Minis",
+      "birthYears": "Jahrgänge 2021 bis 2019"
+    },
+    "princesses": {
+      "name": "Infinity Princesses",
+      "description": "Unser erstes Meisterschaftsteam. Technik, Ausdruck und Teamarbeit werden hier kontinuierlich weiterentwickelt.",
+      "level": "Primary (CCVD)",
+      "ageGroup": "Primary",
+      "birthYears": "Jahrgänge 2019 bis 2014"
+    },
+    "divas": {
+      "name": "Infinity Divas",
+      "description": "Ein leistungsorientiertes Meisterschaftsteam, in dem die Athletinnen anspruchsvollere Elemente erlernen und ihren sportlichen Weg weitergehen.",
+      "level": "Youth (CCVD)",
+      "ageGroup": "Youth",
+      "birthYears": "Jahrgänge 2015 bis 2012"
+    },
+    "kingsQueens": {
+      "name": "Infinity Kings & Queens",
+      "description": "Unser Senior-Meisterschaftsteam trainiert auf fortgeschrittenem Niveau.",
+      "level": "Senior (CCVD)",
+      "ageGroup": "Senior",
+      "birthYears": "ab Jahrgang 2011"
+    },
+    "dialog": {
+      "trainingInfo": "Trainingsinfos",
+      "coaches": "Trainer/innen",
+      "coachesFallback": "Trainerteam",
+      "trainingTimes": "Trainingszeiten",
+      "trainingTimesFallback": "Auf Anfrage",
+      "locations": "Trainingsort",
+      "locationsFallback": "TSV Plattenhardt"
+    }
+  },
+  "achievements": {
+    "title": "Unsere",
+    "titleHighlight": "Erfolge",
+    "subtitle": "Stolz auf die Leistungen unserer Teams mit Fairness, Teamgeist und Leidenschaft.",
+    "filterLabel": "Filtern nach Jahr",
+    "allYears": "Alle Jahre"
+  },
+  "gallery": {
+    "title": "Galerie",
+    "subtitle": "Eindrücke aus Training, Auftritten und Wettkämpfen.",
+    "categories": {
+      "all": "Alle",
+      "competition": "Wettkampf",
+      "training": "Training",
+      "success": "Erfolge",
+      "team": "Team"
+    }
+  },
+  "videos": {
+    "title": "Unsere",
+    "titleHighlight": "Videos",
+    "subtitle": "Erlebe unsere Teams in Aktion: Trainings, Wettkämpfe und besondere Momente."
+  },
+  "events": {
+    "title": "Events",
+    "titleHighlight": "2026",
+    "subtitle": "Erlebe unsere Cheerleading-Events live",
+    "showcase": {
+      "date": "Sonntag, 1. März 2026",
+      "location": "Höhensporthalle Weilerhau",
+      "time": "16:00 Uhr",
+      "description": "Unser jährliches Showcase-Event"
+    }
+  },
+  "cta": {
+    "title": "Mitmachen bei",
+    "titleHighlight": "Infinity Cheer Allstars",
+    "subtitle": "Ein Probetraining ist nach vorheriger Anmeldung möglich. Vorkenntnisse sind nicht erforderlich.",
+    "benefits": {
+      "acrobatics": {
+        "title": "Akrobatik & Stunts",
+        "description": "Sicher Schritt für Schritt lernen"
+      },
+      "teamSpirit": {
+        "title": "Teamgeist",
+        "description": "WE ARE ONE: gemeinsam stärker"
+      },
+      "competitions": {
+        "title": "Wettkämpfe & Auftritte",
+        "description": "Meisterschaften und Events"
+      },
+      "strength": {
+        "title": "Kraft & Technik",
+        "description": "Turnen, Tanz und Conditioning"
+      }
+    },
+    "interested": {
+      "title": "Interesse am Cheerleading?",
+      "description": "Mitgebracht werden sollten lediglich: Sportsachen, Motivation und Teamgeist. Alles Weitere vermitteln wir Schritt für Schritt im Training.",
+      "btnTrial": "Probetraining anfragen",
+      "btnInfo": "Infos auf TSV-Website"
+    }
+  },
+  "footer": {
+    "tagline": "Cheerleading im TSV Plattenhardt",
+    "description": "Die Infinity Cheer Allstars stehen für Teamgeist, Leistungsbereitschaft und Gemeinschaft. Unter dem Motto \"WE ARE ONE\" trainieren wir vom Nachwuchs bis zum Senior-Level.",
+    "sections": {
+      "contact": "Kontakt",
+      "tsvLinks": "TSV Plattenhardt"
+    },
+    "contact": {
+      "email": "E-Mail",
+      "phone": "Telefon",
+      "address": "Adresse",
+      "addressLine1": "TSV Plattenhardt e.V.",
+      "addressLine2": "Höhensporthalle Weilerhau",
+      "addressLine3": "70794 Filderstadt",
+      "mainContact": "Hauptansprechpartner",
+      "businessOffice": "Geschäftsstelle"
+    },
+    "copyright": "© {{year}} Infinity Cheer Allstars, TSV Plattenhardt e.V. Alle Rechte vorbehalten."
+  }
+}

@@ -1,0 +1,199 @@
+import { Button } from "@/components/ui/button";
+import { motion } from "motion/react";
+import { ArrowUpRight, ChevronDown } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import { useState, useEffect } from "react";
+
+export type AvatarList = {
+  image: string;
+  alt?: string;
+};
+
+type HeroSectionProps = {
+  id?: string;
+  avatarList?: AvatarList[];
+  backgroundImageUrl?: string;
+  onPrimaryAction?: () => void;
+  onSecondaryAction?: () => void;
+  onScrollDown?: () => void;
+};
+
+function HeroSection({
+  id,
+  backgroundImageUrl = "/media/ica/infinity-kings-queens.jpg",
+  onPrimaryAction,
+  onSecondaryAction,
+  onScrollDown,
+}: HeroSectionProps) {
+  const { t } = useTranslation();
+  
+  // Countdown State
+  const targetDate = new Date('2026-05-02T00:00:00').getTime();
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0
+  });
+
+  useEffect(() => {
+    const calculateTimeLeft = () => {
+      const now = new Date().getTime();
+      const difference = targetDate - now;
+
+      if (difference > 0) {
+        setTimeLeft({
+          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+          minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
+          seconds: Math.floor((difference % (1000 * 60)) / 1000)
+        });
+      }
+    };
+
+    calculateTimeLeft();
+    const timer = setInterval(calculateTimeLeft, 1000);
+
+    return () => clearInterval(timer);
+  }, [targetDate]);
+  
+  return (
+    <section
+      id={id}
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black"
+    >
+      {/* Background Image with Sepia */}
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage: `url(${backgroundImageUrl})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          filter: "sepia(0.4) contrast(1.1) brightness(0.9)",
+        }}
+      />
+      {/* Gradient Overlay */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: "linear-gradient(135deg, rgba(139,69,19,0.3) 0%, rgba(0,0,0,0.6) 50%, rgba(25,25,112,0.4) 100%)",
+        }}
+      />
+      <div className="w-full h-full relative">
+        <div className="relative w-full pt-0 md:pt-20 pb-10">
+          <div className="container mx-auto relative z-10">
+            <div className="flex flex-col max-w-5xl mx-auto gap-8">
+              <div className="relative flex flex-col text-center items-center sm:gap-6 gap-4">
+                <motion.h1
+                  initial={{ opacity: 0, y: 32 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1, ease: "easeInOut" }}
+                  className="lg:text-8xl md:text-7xl text-5xl font-bold leading-tight text-white"
+                  style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.05em' }}
+                >
+                  {t('hero.title').split(' ').slice(0, 1).join(' ')} <span className="text-primary">{t('hero.title').split(' ').slice(1).join(' ')}</span>
+                </motion.h1>
+                <motion.p
+                  initial={{ opacity: 0, y: 32 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1, delay: 0.1, ease: "easeInOut" }}
+                  className="text-base md:text-lg font-normal max-w-2xl text-foreground/90"
+                >
+                  {t('hero.subtitle')}
+                </motion.p>
+                <motion.p
+                  initial={{ opacity: 0, y: 32 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1, delay: 0.15, ease: "easeInOut" }}
+                  className="text-xl md:text-2xl font-bold text-primary text-center"
+                >
+                  {t('hero.motto')}
+                </motion.p>
+
+                {/* Countdown Timer - Professional */}
+                <motion.div
+                  initial={{ opacity: 0, y: 32 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1, delay: 0.2, ease: "easeInOut" }}
+                  className="w-full max-w-2xl mx-auto mt-10"
+                >
+                  <div className="bg-black/50 backdrop-blur-sm border border-white/10 rounded-xl p-6 md:p-8 shadow-2xl">
+                    <h3 className="text-xl md:text-2xl font-bold text-white tracking-wide text-center mb-6">
+                      STAGE Championship
+                    </h3>
+                    <div className="grid grid-cols-4 gap-3 md:gap-6">
+                      <div className="flex flex-col items-center gap-2">
+                        <div className="text-4xl md:text-6xl font-bold text-white" style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.05em' }}>
+                          {timeLeft.days}
+                        </div>
+                        <span className="text-xs md:text-sm text-white/60 uppercase tracking-wider">Tage</span>
+                      </div>
+                      <div className="flex flex-col items-center gap-2">
+                        <div className="text-4xl md:text-6xl font-bold text-white" style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.05em' }}>
+                          {timeLeft.hours}
+                        </div>
+                        <span className="text-xs md:text-sm text-white/60 uppercase tracking-wider">Stunden</span>
+                      </div>
+                      <div className="flex flex-col items-center gap-2">
+                        <div className="text-4xl md:text-6xl font-bold text-white" style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.05em' }}>
+                          {timeLeft.minutes}
+                        </div>
+                        <span className="text-xs md:text-sm text-white/60 uppercase tracking-wider">Minuten</span>
+                      </div>
+                      <div className="flex flex-col items-center gap-2">
+                        <div className="text-4xl md:text-6xl font-bold text-primary" style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.05em' }}>
+                          {timeLeft.seconds}
+                        </div>
+                        <span className="text-xs md:text-sm text-white/60 uppercase tracking-wider">Sekunden</span>
+                      </div>
+                    </div>
+                    <div className="text-center mt-6 pt-6 border-t border-white/10">
+                      <span className="text-sm text-white/70">02. Mai 2026</span>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+              <motion.div
+                initial={{ opacity: 0, y: 32 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.25, ease: "easeInOut" }}
+                className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+              >
+                <Button
+                  onClick={onPrimaryAction}
+                  className="relative text-sm font-medium rounded-full h-12 p-1 ps-6 pe-14 group transition-all duration-500 hover:ps-14 hover:pe-6 w-fit overflow-hidden"
+                >
+                  <span className="relative z-10 transition-all duration-500">
+                    {t('hero.btnDiscover')}
+                  </span>
+                  <span className="absolute right-1 w-10 h-10 bg-background text-foreground rounded-full flex items-center justify-center transition-all duration-500 group-hover:right-[calc(100%-44px)] group-hover:rotate-45">
+                    <ArrowUpRight size={16} />
+                  </span>
+                </Button>
+
+                <Button
+                  variant="outline"
+                  onClick={onSecondaryAction}
+                  className="rounded-full h-12 px-8"
+                >
+                  {t('hero.btnTrial')}
+                </Button>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button
+        onClick={onScrollDown}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-foreground/60 hover:text-primary transition-colors z-10"
+        aria-label={t('hero.scrollDown')}
+        type="button"
+      >
+        <ChevronDown size={32} className="animate-bounce" />
+      </button>
+    </section>
+  );
+}
+
+export default HeroSection;
