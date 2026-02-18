@@ -114,9 +114,9 @@ export function Teams() {
       </div>
 
       <Dialog open={!!selectedTeam} onOpenChange={() => setSelectedTeam(null)}>
-        <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
-          <DialogHeader>
-            <DialogTitle className="text-2xl">{selectedTeam?.name}</DialogTitle>
+        <DialogContent className="max-w-2xl max-h-[92vh] overflow-y-auto p-4 sm:p-6">
+          <DialogHeader className="pr-8">
+            <DialogTitle className="text-xl sm:text-2xl">{selectedTeam?.name}</DialogTitle>
             <DialogDescription>
               <div className="flex gap-2 mt-2">
                 <Badge>{selectedTeam?.level}</Badge>
@@ -124,37 +124,39 @@ export function Teams() {
               </div>
             </DialogDescription>
           </DialogHeader>
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             <div
-              className="h-80 bg-contain bg-center bg-no-repeat bg-black rounded-lg"
+              className="h-48 sm:h-80 bg-contain bg-center bg-no-repeat bg-black rounded-lg"
               style={{ backgroundImage: `url(${selectedTeam?.image})` }}
             />
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
               {selectedTeam?.description}
             </p>
             <Separator />
-            <div className="space-y-3">
-              <h4 className="font-semibold text-lg">{t('teams.dialog.trainingInfo')}</h4>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+            <div className="space-y-2 sm:space-y-3">
+              <h4 className="font-semibold text-base sm:text-lg">{t('teams.dialog.trainingInfo')}</h4>
+              <div className="grid grid-cols-1 gap-3 sm:gap-4 text-xs sm:text-sm">
                 <div>
-                  <p className="text-muted-foreground">{t('teams.dialog.coaches')}</p>
-                  <p className="font-medium">
+                  <p className="text-muted-foreground text-xs sm:text-sm">{t('teams.dialog.coaches')}</p>
+                  <p className="font-medium text-sm sm:text-base">
                     {(selectedTeam?.coaches ?? []).length > 0
                       ? (selectedTeam?.coaches ?? []).join(', ')
                       : t('teams.dialog.coachesFallback')}
                   </p>
                 </div>
                 <div>
-                  <p className="text-muted-foreground">{t('teams.dialog.trainingTimes')}</p>
-                  <p className="font-medium">
+                  <p className="text-muted-foreground text-xs sm:text-sm">{t('teams.dialog.trainingTimes')}</p>
+                  <p className="font-medium text-sm sm:text-base leading-relaxed">
                     {(selectedTeam?.trainingTimes ?? []).length > 0
-                      ? (selectedTeam?.trainingTimes ?? []).join(' · ')
+                      ? (selectedTeam?.trainingTimes ?? []).map((time, i) => (
+                          <span key={i} className="block">{time}</span>
+                        ))
                       : t('teams.dialog.trainingTimesFallback')}
                   </p>
                 </div>
-                <div className="md:col-span-2">
-                  <p className="text-muted-foreground">{t('teams.dialog.locations')}</p>
-                  <p className="font-medium">
+                <div>
+                  <p className="text-muted-foreground text-xs sm:text-sm">{t('teams.dialog.locations')}</p>
+                  <p className="font-medium text-sm sm:text-base">
                     {(selectedTeam?.trainingLocations ?? []).length > 0
                       ? (selectedTeam?.trainingLocations ?? []).join(' · ')
                       : t('teams.dialog.locationsFallback')}
