@@ -4,7 +4,7 @@ import path from 'path';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/infinity-allstars/',
+  base: '/',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
