@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Separator } from '@/components/ui/separator';
 import { useTranslation } from 'react-i18next';
+import { getAssetPath } from '@/utils/paths';
 import type { Team } from '@/types';
 
 const useTeamsData = (): Team[] => {
@@ -18,7 +19,7 @@ const useTeamsData = (): Team[] => {
       level: t('teams.sparkles.level'),
       ageGroup: t('teams.sparkles.ageGroup'),
       birthYears: t('teams.sparkles.birthYears'),
-      image: '/media/ica/spark.jpeg',
+      image: getAssetPath('/media/ica/spark.jpeg'),
       coaches: ['Adriana Wenzel', 'Cetric Kaiser'],
       trainingTimes: ['Freitags 15:30–17:00 Uhr / Fridays 3:30–5:00 PM'],
       trainingLocations: ['Höhensporthalle (Gymnastikraum)'],
@@ -30,7 +31,7 @@ const useTeamsData = (): Team[] => {
       level: t('teams.princesses.level'),
       ageGroup: t('teams.princesses.ageGroup'),
       birthYears: t('teams.princesses.birthYears'),
-      image: '/media/ica/Princ.jpg',
+      image: getAssetPath('/media/ica/Princ.jpg'),
       coaches: ['Chantal Pohl', 'Julia Rebman'],
       trainingTimes: ['Freitags 15:30–17:00 Uhr / Fridays 3:30–5:00 PM'],
       trainingLocations: ['Weilerhauhalle'],
@@ -42,7 +43,7 @@ const useTeamsData = (): Team[] => {
       level: t('teams.divas.level'),
       ageGroup: t('teams.divas.ageGroup'),
       birthYears: t('teams.divas.birthYears'),
-      image: '/media/ica/Divas.jpg',
+      image: getAssetPath('/media/ica/Divas.jpg'),
       coaches: ['Sandra Pohl'],
       trainingTimes: ['Dienstags 17:15–18:30 Uhr / Tuesdays 5:15–6:30 PM', 'Freitags 16:30–18:00 Uhr / Fridays 4:30–6:00 PM'],
       trainingLocations: ['Höhensporthalle (Gymnastikraum)', 'Weilerhauhalle'],
@@ -54,7 +55,7 @@ const useTeamsData = (): Team[] => {
       level: t('teams.kingsQueens.level'),
       ageGroup: t('teams.kingsQueens.ageGroup'),
       birthYears: t('teams.kingsQueens.birthYears'),
-      image: '/media/ica/queens2.jpg',
+      image: getAssetPath('/media/ica/queens2.jpg'),
       coaches: ['Sandra Pohl', 'Sabrina Hertfelder'],
       trainingTimes: ['Dienstags 18:00–19:30 Uhr / Tuesdays 6:00–7:30 PM', 'Freitags 19:30–21:15 Uhr / Fridays 7:30–9:15 PM'],
       trainingLocations: ['Höhensporthalle (Gymnastikraum)', 'Weilerhauhalle'],

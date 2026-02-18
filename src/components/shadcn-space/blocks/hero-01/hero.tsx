@@ -3,6 +3,7 @@ import { motion } from "motion/react";
 import { ArrowUpRight, ChevronDown } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useState, useEffect } from "react";
+import { getAssetPath } from "@/utils/paths";
 
 export type AvatarList = {
   image: string;
@@ -20,7 +21,7 @@ type HeroSectionProps = {
 
 function HeroSection({
   id,
-  backgroundImageUrl = "/media/ica/infinity-kings-queens.jpg",
+  backgroundImageUrl = getAssetPath("/media/ica/infinity-kings-queens.jpg"),
   onPrimaryAction,
   onSecondaryAction,
   onScrollDown,

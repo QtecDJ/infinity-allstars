@@ -2,6 +2,7 @@ import { Separator } from '@/components/ui/separator';
 import { Calendar, MapPin, Clock } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import { getAssetPath } from '@/utils/paths';
 
 type Event = {
   title: string;
@@ -21,7 +22,7 @@ export function Events() {
       date: t('events.showcase.date'),
       location: t('events.showcase.location'),
       time: t('events.showcase.time'),
-      image: '/media/Event/showcase26.jpeg',
+      image: getAssetPath('/media/Event/showcase26.jpeg'),
       description: t('events.showcase.description')
     }
   ];

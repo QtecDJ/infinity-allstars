@@ -1,6 +1,7 @@
 import { Separator } from '@/components/ui/separator';
 import { Instagram, ExternalLink, Mail, Phone, MapPin } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { getAssetPath } from '@/utils/paths';
 
 // TikTok Icon Component
 const TikTokIcon = () => (
@@ -159,7 +160,7 @@ export function Footer() {
               aria-label="CCVD - Cheerleading und Cheersport Verband Deutschland"
             >
               <img
-                src="/media/ica/ccvd.webp"
+                src={getAssetPath('/media/ica/ccvd.webp')}
                 alt="CCVD Logo"
                 className="w-auto h-24 object-contain"
               />

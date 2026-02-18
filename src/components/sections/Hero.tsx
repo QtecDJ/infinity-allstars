@@ -1,4 +1,5 @@
 import Hero01 from '@/components/shadcn-space/blocks/hero-01/hero';
+import { getAssetPath } from '@/utils/paths';
 
 export function Hero() {
   const scrollToSection = (id: string) => {
@@ -11,7 +12,7 @@ export function Hero() {
   return (
     <Hero01
       id="hero"
-      backgroundImageUrl="/media/ica/infinity-kings-queens.jpg"
+      backgroundImageUrl={getAssetPath('/media/ica/infinity-kings-queens.jpg')}
       avatarList={[]}
       onPrimaryAction={() => scrollToSection('teams')}
       onSecondaryAction={() => scrollToSection('join')}

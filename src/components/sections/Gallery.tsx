@@ -2,54 +2,55 @@ import { useState } from 'react';
 import { Separator } from '@/components/ui/separator';
 import { Badge } from '@/components/ui/badge';
 import { useTranslation } from 'react-i18next';
+import { getAssetPath } from '@/utils/paths';
 import type { GalleryImage } from '@/types';
 
 const galleryData: GalleryImage[] = [
   {
     id: '1',
-    url: '/media/tsv/10-b62b6d4f-1920w.jpg',
+    url: getAssetPath('/media/tsv/10-b62b6d4f-1920w.jpg'),
     alt: 'Auftritt bei einem Wettkampf',
     category: 'competition',
   },
   {
     id: '2',
-    url: '/media/tsv/IMG-20230503-WA0019-1920w.jpg',
+    url: getAssetPath('/media/tsv/IMG-20230503-WA0019-1920w.jpg'),
     alt: 'Training: Stunts und Technik',
     category: 'training',
   },
   {
     id: '3',
-    url: '/media/tsv/DSCN9194-1920w.JPG',
+    url: getAssetPath('/media/tsv/DSCN9194-1920w.JPG'),
     alt: 'Siegerehrung und Teamjubel',
     category: 'success',
   },
   {
     id: '4',
-    url: '/media/tsv/DSCN9272-1920w.JPG',
+    url: getAssetPath('/media/tsv/DSCN9272-1920w.JPG'),
     alt: 'Teamgeist und Zusammenhalt',
     category: 'team',
   },
   {
     id: '5',
-    url: '/media/tsv/9-00a8ac77-1920w.jpg',
+    url: getAssetPath('/media/tsv/9-00a8ac77-1920w.jpg'),
     alt: 'Stunt-Element im Wettkampf',
     category: 'competition',
   },
   {
     id: '6',
-    url: '/media/tsv/7-38276b71-1920w.jpg',
+    url: getAssetPath('/media/tsv/7-38276b71-1920w.jpg'),
     alt: 'Training im Nachwuchsbereich',
     category: 'training',
   },
   {
     id: '7',
-    url: '/media/tsv/8-8ac61970-1920w.jpg',
+    url: getAssetPath('/media/tsv/8-8ac61970-1920w.jpg'),
     alt: 'Formation auf der Fläche',
     category: 'competition',
   },
   {
     id: '8',
-    url: '/media/tsv/14-1920w.jpg',
+    url: getAssetPath('/media/tsv/14-1920w.jpg'),
     alt: 'Gemeinsames Feiern nach dem Auftritt',
     category: 'success',
   },
