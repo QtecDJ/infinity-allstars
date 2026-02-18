@@ -59,27 +59,37 @@ function HeroSection({
   }, [targetDate]);
   
   return (
-    <section
-      id={id}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black"
-    >
-      {/* Background Image with Sepia */}
-      <div
-        className="absolute inset-0"
-        style={{
-          backgroundImage: `url(${backgroundImageUrl})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          filter: "sepia(0.4) contrast(1.1) brightness(0.9)",
-        }}
-      />
-      {/* Gradient Overlay */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background: "linear-gradient(135deg, rgba(139,69,19,0.3) 0%, rgba(0,0,0,0.6) 50%, rgba(25,25,112,0.4) 100%)",
-        }}
-      />
+    <>
+      <style>{`
+        @media (max-width: 767px) {
+          .hero-bg-mobile {
+            background-size: auto 100% !important;
+            background-position: center center !important;
+          }
+        }
+      `}</style>
+      <section
+        id={id}
+        className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black"
+      >
+        {/* Background Image with Sepia */}
+        <div
+          className="absolute inset-0 hero-bg-mobile"
+          style={{
+            backgroundImage: `url(${backgroundImageUrl})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center center",
+            backgroundRepeat: "no-repeat",
+            filter: "sepia(0.4) contrast(1.1) brightness(0.9)",
+          }}
+        />
+        {/* Gradient Overlay */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background: "linear-gradient(135deg, rgba(139,69,19,0.3) 0%, rgba(0,0,0,0.6) 50%, rgba(25,25,112,0.4) 100%)",
+          }}
+        />
       <div className="w-full h-full relative">
         <div className="relative w-full pt-24 md:pt-20 pb-10">
           <div className="container mx-auto relative z-10">
@@ -194,6 +204,7 @@ function HeroSection({
         <ChevronDown size={32} className="animate-bounce" />
       </button>
     </section>
+    </>
   );
 }
 
