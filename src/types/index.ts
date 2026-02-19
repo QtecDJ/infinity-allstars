@@ -21,6 +21,7 @@ export interface Achievement {
 export interface GalleryImage {
   id: string;
   url: string;
+  thumbnail?: string;
   alt: string;
   category: string;
 }
