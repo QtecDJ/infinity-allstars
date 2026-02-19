@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Separator } from '@/components/ui/separator';
 import { Badge } from '@/components/ui/badge';
+import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { getAssetPath } from '@/utils/paths';
 import type { GalleryImage } from '@/types';
@@ -54,11 +56,60 @@ const galleryData: GalleryImage[] = [
     alt: 'Gemeinsames Feiern nach dem Auftritt',
     category: 'success',
   },
+  {
+    id: '9',
+    url: getAssetPath('/media/fasching/WhatsApp Image 2026-02-19 at 13.10.57.jpeg'),
+    alt: 'Auftritt Fasching 2026',
+    category: 'performance',
+  },
+  {
+    id: '10',
+    url: getAssetPath('/media/fasching/WhatsApp Image 2026-02-19 at 13.10.57 (1).jpeg'),
+    alt: 'Auftritt Fasching 2026',
+    category: 'performance',
+  },
+  {
+    id: '11',
+    url: getAssetPath('/media/fasching/WhatsApp Image 2026-02-19 at 13.10.57 (2).jpeg'),
+    alt: 'Auftritt Fasching 2026',
+    category: 'performance',
+  },
+  {
+    id: '12',
+    url: getAssetPath('/media/fasching/WhatsApp Image 2026-02-19 at 13.10.57 (3).jpeg'),
+    alt: 'Auftritt Fasching 2026',
+    category: 'performance',
+  },
+  {
+    id: '13',
+    url: getAssetPath('/media/fasching/WhatsApp Image 2026-02-19 at 13.10.58.jpeg'),
+    alt: 'Auftritt Fasching 2026',
+    category: 'performance',
+  },
+  {
+    id: '14',
+    url: getAssetPath('/media/fasching/WhatsApp Image 2026-02-19 at 13.10.58 (1).jpeg'),
+    alt: 'Auftritt Fasching 2026',
+    category: 'performance',
+  },
+  {
+    id: '15',
+    url: getAssetPath('/media/fasching/WhatsApp Image 2026-02-19 at 13.10.58 (2).jpeg'),
+    alt: 'Auftritt Fasching 2026',
+    category: 'performance',
+  },
+  {
+    id: '16',
+    url: getAssetPath('/media/fasching/WhatsApp Image 2026-02-19 at 13.10.58 (3).jpeg'),
+    alt: 'Auftritt Fasching 2026',
+    category: 'performance',
+  },
 ];
 
 export function Gallery() {
   const { t } = useTranslation();
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
   
   const categories: Array<{ key: string; label: string }> = [
     { key: 'all', label: t('gallery.categories.all') },
@@ -66,12 +117,30 @@ export function Gallery() {
     { key: 'training', label: t('gallery.categories.training') },
     { key: 'success', label: t('gallery.categories.success') },
     { key: 'team', label: t('gallery.categories.team') },
+    { key: 'performance', label: t('gallery.categories.performance') },
   ];
 
   const filteredImages =
     selectedCategory === 'all'
       ? galleryData
       : galleryData.filter((img) => img.category === selectedCategory);
+
+  const handlePrevious = () => {
+    if (selectedImageIndex !== null && selectedImageIndex > 0) {
+      setSelectedImageIndex(selectedImageIndex - 1);
+    }
+  };
+
+  const handleNext = () => {
+    if (selectedImageIndex !== null && selectedImageIndex < filteredImages.length - 1) {
+      setSelectedImageIndex(selectedImageIndex + 1);
+    }
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'ArrowLeft') handlePrevious();
+    if (e.key === 'ArrowRight') handleNext();
+  };
 
   return (
     <section id="gallery" className="py-24 bg-muted/30">
@@ -99,30 +168,110 @@ export function Gallery() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-7xl mx-auto">
-          {filteredImages.map((image) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+          {filteredImages.map((image, index) => (
             <div
               key={image.id}
-              className="group relative overflow-hidden rounded-lg aspect-square cursor-pointer"
+              className="group relative overflow-hidden rounded-lg aspect-[4/3] cursor-pointer shadow-lg hover:shadow-2xl transition-shadow duration-300 bg-muted"
+              onClick={() => setSelectedImageIndex(index)}
+              style={{ 
+                contentVisibility: 'auto',
+                contain: 'layout style paint',
+              }}
             >
               <img
                 src={image.url}
                 alt={image.alt}
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 loading="lazy"
+                decoding="async"
+                fetchPriority={index < 6 ? "high" : "low"}
+                style={{ 
+                  transform: 'translateZ(0)',
+                  imageRendering: 'crisp-edges',
+                  maxWidth: '100%',
+                  height: 'auto',
+                }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-0 left-0 right-0 p-4">
-                  <Badge variant="default" className="mb-2">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
+                  <Badge variant="default" className="mb-2 text-xs sm:text-sm">
                     {t(`gallery.categories.${image.category}`)}
                   </Badge>
-                  <p className="text-sm text-white">{image.alt}</p>
+                  <p className="text-sm sm:text-base text-white font-medium">{image.alt}</p>
                 </div>
               </div>
             </div>
           ))}
         </div>
       </div>
+
+      {/* Lightbox Modal */}
+      <Dialog open={selectedImageIndex !== null} onOpenChange={() => setSelectedImageIndex(null)}>
+        <DialogContent 
+          className="max-w-[95vw] max-h-[95vh] w-auto h-auto p-0 bg-black/95 border-0"
+          onKeyDown={handleKeyDown}
+        >
+          {selectedImageIndex !== null && filteredImages[selectedImageIndex] && (
+            <div className="relative w-full h-full flex items-center justify-center">
+              {/* Close Button */}
+              <button
+                onClick={() => setSelectedImageIndex(null)}
+                className="absolute top-4 right-4 z-50 p-2 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors"
+                aria-label="Close"
+              >
+                <X className="w-6 h-6 text-white" />
+              </button>
+
+              {/* Previous Button */}
+              {selectedImageIndex > 0 && (
+                <button
+                  onClick={handlePrevious}
+                  className="absolute left-4 z-50 p-3 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors"
+                  aria-label="Previous"
+                >
+                  <ChevronLeft className="w-6 h-6 text-white" />
+                </button>
+              )}
+
+              {/* Image */}
+              <div className="relative max-w-[90vw] max-h-[85vh]">
+                <img
+                  src={filteredImages[selectedImageIndex].url}
+                  alt={filteredImages[selectedImageIndex].alt}
+                  className="max-w-full max-h-[85vh] object-contain rounded-lg"
+                  decoding="async"
+                  loading="eager"
+                />
+                
+                {/* Image Info */}
+                <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/90 to-transparent rounded-b-lg">
+                  <Badge variant="default" className="mb-2">
+                    {t(`gallery.categories.${filteredImages[selectedImageIndex].category}`)}
+                  </Badge>
+                  <p className="text-white text-sm sm:text-base">
+                    {filteredImages[selectedImageIndex].alt}
+                  </p>
+                  <p className="text-white/60 text-xs sm:text-sm mt-1">
+                    {selectedImageIndex + 1} / {filteredImages.length}
+                  </p>
+                </div>
+              </div>
+
+              {/* Next Button */}
+              {selectedImageIndex < filteredImages.length - 1 && (
+                <button
+                  onClick={handleNext}
+                  className="absolute right-4 z-50 p-3 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors"
+                  aria-label="Next"
+                >
+                  <ChevronRight className="w-6 h-6 text-white" />
+                </button>
+              )}
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
     </section>
   );
 }

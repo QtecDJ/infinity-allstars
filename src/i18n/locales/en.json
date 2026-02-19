@@ -96,7 +96,8 @@
       "competition": "Competition",
       "training": "Training",
       "success": "Achievements",
-      "team": "Team"
+      "team": "Team",
+      "performance": "Performances"
     }
   },
   "videos": {
@@ -112,7 +113,8 @@
       "date": "Sunday, March 1, 2026",
       "location": "Höhensporthalle Weilerhau",
       "time": "4:00 PM",
-      "description": "Our annual showcase event"
+      "description": "Our annual showcase event",
+      "presale": "Preorder"
     }
   },
   "cta": {
