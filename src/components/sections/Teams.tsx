@@ -85,13 +85,13 @@ export function Teams() {
           {teamsData.map((team) => (
             <Card
               key={team.id}
-              className="overflow-hidden hover:border-primary/50 transition-all duration-300 hover:shadow-xl"
+              className="overflow-hidden hover:border-primary/50 transition-all duration-300 hover:shadow-xl flex flex-col h-full"
             >
               <div
-                className="h-64 bg-contain bg-center bg-no-repeat bg-black"
+                className="h-64 bg-contain bg-center bg-no-repeat bg-black flex-shrink-0"
                 style={{ backgroundImage: `url(${team.image})` }}
               />
-              <CardHeader>
+              <CardHeader className="flex-grow">
                 <div className="flex items-center justify-between mb-2">
                   <Badge variant="default">{team.level}</Badge>
                   <span className="text-xs text-muted-foreground">{team.birthYears ?? team.ageGroup}</span>
@@ -99,7 +99,7 @@ export function Teams() {
                 <CardTitle className="text-xl">{team.name}</CardTitle>
                 <CardDescription>{team.description}</CardDescription>
               </CardHeader>
-              <CardFooter>
+              <CardFooter className="flex-shrink-0">
                 <Button
                   variant="outline"
                   className="w-full"

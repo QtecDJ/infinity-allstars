@@ -186,15 +186,12 @@ export function Gallery() {
               <img
                 src={image.thumbnail || image.url}
                 alt={image.alt}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
                 loading="lazy"
                 decoding="async"
                 fetchPriority={index < 6 ? "high" : "low"}
                 style={{ 
                   transform: 'translateZ(0)',
-                  imageRendering: 'crisp-edges',
-                  maxWidth: '100%',
-                  height: 'auto',
                 }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -213,47 +210,47 @@ export function Gallery() {
       {/* Lightbox Modal */}
       <Dialog open={selectedImageIndex !== null} onOpenChange={() => setSelectedImageIndex(null)}>
         <DialogContent 
-          className="max-w-[98vw] max-h-[98vh] w-auto h-auto p-0 bg-black/95 border-0"
+          className="max-w-[100vw] max-h-[100vh] w-full h-full p-0 bg-black/98 border-0 sm:max-w-[95vw] sm:max-h-[95vh] sm:w-auto sm:h-auto"
           onKeyDown={handleKeyDown}
         >
           {selectedImageIndex !== null && filteredImages[selectedImageIndex] && (
-            <div className="relative w-full h-full flex items-center justify-center p-2 sm:p-4">
+            <div className="relative w-full h-full flex items-center justify-center p-0 sm:p-4">
               {/* Close Button */}
               <button
                 onClick={() => setSelectedImageIndex(null)}
-                className="absolute top-2 right-2 sm:top-4 sm:right-4 z-50 p-2 sm:p-2 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors"
+                className="absolute top-2 right-2 sm:top-4 sm:right-4 z-50 p-3 rounded-full bg-black/60 backdrop-blur-sm hover:bg-black/80 transition-colors border border-white/20"
                 aria-label="Close"
               >
-                <X className="w-6 h-6 sm:w-6 sm:h-6 text-white" />
+                <X className="w-6 h-6 text-white" />
               </button>
 
               {/* Previous Button */}
               {selectedImageIndex > 0 && (
                 <button
                   onClick={handlePrevious}
-                  className="absolute left-2 sm:left-4 z-50 p-2 sm:p-3 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors"
+                  className="absolute left-2 top-1/2 -translate-y-1/2 sm:left-4 z-50 p-3 rounded-full bg-black/60 backdrop-blur-sm hover:bg-black/80 transition-colors border border-white/20"
                   aria-label="Previous"
                 >
-                  <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                  <ChevronLeft className="w-6 h-6 text-white" />
                 </button>
               )}
 
               {/* Image */}
-              <div className="relative w-full h-full flex items-center justify-center">
+              <div className="relative w-full h-full flex flex-col items-center justify-center">
                 <img
                   src={filteredImages[selectedImageIndex].url}
                   alt={filteredImages[selectedImageIndex].alt}
-                  className="max-w-full max-h-[90vh] sm:max-h-[85vh] w-auto h-auto object-contain rounded-lg"
+                  className="max-w-full max-h-[calc(100vh-120px)] sm:max-h-[85vh] w-auto h-auto object-contain"
                   decoding="async"
                   loading="eager"
                 />
                 
                 {/* Image Info */}
-                <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 bg-gradient-to-t from-black/90 to-transparent rounded-b-lg">
-                  <Badge variant="default" className="mb-1 sm:mb-2 text-xs">
+                <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 bg-gradient-to-t from-black via-black/80 to-transparent">
+                  <Badge variant="default" className="mb-1 text-xs">
                     {t(`gallery.categories.${filteredImages[selectedImageIndex].category}`)}
                   </Badge>
-                  <p className="text-white text-xs sm:text-sm md:text-base">
+                  <p className="text-white text-xs sm:text-sm line-clamp-2">
                     {filteredImages[selectedImageIndex].alt}
                   </p>
                   <p className="text-white/60 text-xs mt-1">
@@ -266,10 +263,10 @@ export function Gallery() {
               {selectedImageIndex < filteredImages.length - 1 && (
                 <button
                   onClick={handleNext}
-                  className="absolute right-2 sm:right-4 z-50 p-2 sm:p-3 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 sm:right-4 z-50 p-3 rounded-full bg-black/60 backdrop-blur-sm hover:bg-black/80 transition-colors border border-white/20"
                   aria-label="Next"
                 >
-                  <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                  <ChevronRight className="w-6 h-6 text-white" />
                 </button>
               )}
             </div>
