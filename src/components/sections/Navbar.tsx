@@ -50,7 +50,11 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16">
           <button
             onClick={() => scrollToSection('hero')}
-            className="text-xl font-bold text-primary hover:text-primary/80 transition-colors"
+            className={`text-xl font-bold text-primary hover:text-primary/80 transition-all duration-500 ${
+              isScrolled
+                ? 'opacity-100 translate-x-0'
+                : 'opacity-0 -translate-x-4 pointer-events-none'
+            }`}
           >
             INFINITY CHEER ALLSTARS
           </button>

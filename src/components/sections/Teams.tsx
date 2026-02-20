@@ -4,6 +4,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Separator } from '@/components/ui/separator';
+import { Meteors } from '@/components/ui/meteors';
 import { useTranslation } from 'react-i18next';
 import { getAssetPath } from '@/utils/paths';
 import type { Team } from '@/types';
@@ -69,8 +70,9 @@ export function Teams() {
   const teamsData = useTeamsData();
 
   return (
-    <section id="teams" className="py-24 bg-muted/30">
-      <div className="container mx-auto px-4">
+    <section id="teams" className="relative py-24 bg-neutral-950 overflow-hidden">
+      <Meteors count={30} color="#FF6B35" tailColor="#FF6B35" />
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             {t('teams.title')} <span className="text-primary">{t('teams.titleHighlight')}</span>
