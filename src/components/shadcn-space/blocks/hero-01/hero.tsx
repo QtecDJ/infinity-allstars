@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button";
-import { motion } from "motion/react";
+import { motion, useScroll, useTransform } from "motion/react";
 import { ArrowUpRight, ChevronDown } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { getAssetPath } from "@/utils/paths";
 
 export type AvatarList = {
@@ -27,6 +27,18 @@ function HeroSection({
   onScrollDown,
 }: HeroSectionProps) {
   const { t } = useTranslation();
+  const heroRef = useRef<HTMLElement>(null);
+  
+  // Parallax Scroll Effect
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"],
+    layoutEffect: false
+  });
+  
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.6, 1], [1, 0.9, 0.5]);
   
   // Countdown State
   const targetDate = new Date('2026-05-02T00:00:00').getTime();
@@ -69,11 +81,12 @@ function HeroSection({
         }
       `}</style>
       <section
+        ref={heroRef}
         id={id}
         className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black"
       >
-        {/* Background Image with Sepia */}
-        <div
+        {/* Background Image with Sepia and Parallax */}
+        <motion.div
           className="absolute inset-0 hero-bg-mobile"
           style={{
             backgroundImage: `url(${backgroundImageUrl})`,
@@ -81,25 +94,71 @@ function HeroSection({
             backgroundPosition: "center center",
             backgroundRepeat: "no-repeat",
             filter: "sepia(0.4) contrast(1.1) brightness(0.9)",
+            y: backgroundY,
+            opacity: opacity,
+            willChange: "transform, opacity",
+            transform: "translateZ(0)",
+            backfaceVisibility: "hidden",
           }}
         />
         {/* Gradient Overlay */}
-        <div
+        <motion.div
           className="absolute inset-0"
           style={{
             background: "linear-gradient(135deg, rgba(139,69,19,0.3) 0%, rgba(0,0,0,0.6) 50%, rgba(25,25,112,0.4) 100%)",
+            opacity: opacity,
+            willChange: "opacity",
           }}
         />
-      <div className="w-full h-full relative">
+      <motion.div 
+        className="w-full h-full relative"
+        style={{ 
+          y: contentY,
+          willChange: "transform",
+          transform: "translateZ(0)",
+        }}
+      >
         <div className="relative w-full pt-24 md:pt-20 pb-10">
           <div className="container mx-auto relative z-10">
             <div className="flex flex-col max-w-5xl mx-auto gap-8">
               <div className="relative flex flex-col text-center items-center sm:gap-6 gap-4">
+                <style>{`
+                  .hero-title-3d {
+                    text-shadow: 
+                      0 1px 0 rgba(0,0,0,0.3),
+                      0 2px 0 rgba(0,0,0,0.25),
+                      0 3px 0 rgba(0,0,0,0.2),
+                      0 4px 0 rgba(0,0,0,0.15),
+                      0 5px 0 rgba(0,0,0,0.1),
+                      0 6px 1px rgba(0,0,0,0.1),
+                      0 0 5px rgba(0,0,0,0.1),
+                      0 1px 3px rgba(0,0,0,0.3),
+                      0 3px 5px rgba(0,0,0,0.2),
+                      0 5px 10px rgba(0,0,0,0.25),
+                      0 10px 15px rgba(0,0,0,0.2),
+                      0 15px 25px rgba(0,0,0,0.15);
+                  }
+                  .hero-title-3d .text-primary {
+                    text-shadow: 
+                      0 1px 0 rgba(var(--primary-rgb, 255, 0, 0), 0.7),
+                      0 2px 0 rgba(0,0,0,0.25),
+                      0 3px 0 rgba(0,0,0,0.2),
+                      0 4px 0 rgba(0,0,0,0.15),
+                      0 5px 0 rgba(0,0,0,0.1),
+                      0 6px 1px rgba(0,0,0,0.1),
+                      0 0 10px rgba(var(--primary-rgb, 255, 0, 0), 0.3),
+                      0 1px 3px rgba(0,0,0,0.3),
+                      0 3px 5px rgba(0,0,0,0.2),
+                      0 5px 10px rgba(0,0,0,0.25),
+                      0 10px 15px rgba(0,0,0,0.2),
+                      0 15px 25px rgba(0,0,0,0.15);
+                  }
+                `}</style>
                 <motion.h1
                   initial={{ opacity: 0, y: 32 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1, ease: "easeInOut" }}
-                  className="lg:text-8xl md:text-7xl text-5xl font-bold leading-tight text-white"
+                  className="lg:text-8xl md:text-7xl text-5xl font-bold leading-tight text-white hero-title-3d"
                   style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.05em' }}
                 >
                   {t('hero.title').split(' ').slice(0, 1).join(' ')} <span className="text-primary">{t('hero.title').split(' ').slice(1).join(' ')}</span>
@@ -193,7 +252,7 @@ function HeroSection({
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       <button
         onClick={onScrollDown}
