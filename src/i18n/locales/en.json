@@ -15,6 +15,7 @@
     "events": "Events",
     "gallery": "Gallery",
     "videos": "Videos",
+    "reports": "Reports",
     "join": "Join Us"
   },
   "about": {
@@ -104,6 +105,13 @@
     "title": "Our",
     "titleHighlight": "Videos",
     "subtitle": "Experience our teams in action: training, competitions, and special moments."
+  },
+  "reports": {
+    "title": "Reports",
+    "titleHighlight": "& News",
+    "description": "Latest news, reports and stories from Infinity Cheer Allstars.",
+    "loading": "Loading blog...",
+    "errorLoading": "Failed to load blog. Please try again later."
   },
   "events": {
     "title": "Events",

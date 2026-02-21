@@ -33,6 +33,7 @@ export function Navbar() {
     { label: t('nav.events'), id: 'events' },
     { label: t('nav.gallery'), id: 'gallery' },
     { label: t('nav.videos'), id: 'videos' },
+    { label: t('nav.reports'), id: 'reports' },
   ];
 
   return (

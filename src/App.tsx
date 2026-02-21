@@ -5,6 +5,7 @@ import { Teams } from '@/components/sections/Teams';
 import { Achievements } from '@/components/sections/Achievements';
 import { Gallery } from '@/components/sections/Gallery';
 import { Videos } from '@/components/sections/Videos';
+import { Reports } from '@/components/sections/Reports';
 import { Events } from '@/components/sections/Events';
 import { CallToAction } from '@/components/sections/CallToAction';
 import { Footer } from '@/components/sections/Footer';
@@ -20,6 +21,7 @@ function App() {
         <Achievements />
         <Gallery />
         <Videos />
+        <Reports />
         <Events />
         <CallToAction />
       </main>
