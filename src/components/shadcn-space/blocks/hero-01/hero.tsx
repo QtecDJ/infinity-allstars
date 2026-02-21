@@ -13,7 +13,6 @@ export type AvatarList = {
 type HeroSectionProps = {
   id?: string;
   avatarList?: AvatarList[];
-  backgroundImageUrl?: string;
   onPrimaryAction?: () => void;
   onSecondaryAction?: () => void;
   onScrollDown?: () => void;
@@ -21,13 +20,22 @@ type HeroSectionProps = {
 
 function HeroSection({
   id,
-  backgroundImageUrl = getAssetPath("/media/ica/infinity-kings-queens.jpg"),
   onPrimaryAction,
   onSecondaryAction,
   onScrollDown,
 }: HeroSectionProps) {
   const { t } = useTranslation();
   const heroRef = useRef<HTMLElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  
+  // Media slides configuration
+  const mediaSlides = [
+    { type: 'image', url: getAssetPath("/media/ica/infinity-kings-queens.jpg") },
+    { type: 'video', url: getAssetPath("/media/HeroMedia/icac.webm") },
+  ];
+  
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   
   // Parallax Scroll Effect
   const { scrollYProgress } = useScroll({
@@ -69,6 +77,40 @@ function HeroSection({
     return () => clearInterval(timer);
   }, [targetDate]);
   
+  // Auto-slide functionality
+  useEffect(() => {
+    if (isVideoPlaying) return;
+    
+    // Only auto-advance from original (slide 0) to video (slide 1)
+    if (currentSlide === 0) {
+      const timer = setTimeout(() => {
+        setCurrentSlide(1); // Go to video
+      }, 8000);
+      
+      return () => clearTimeout(timer);
+    }
+  }, [currentSlide, isVideoPlaying]);
+  
+  // Handle video playback
+  useEffect(() => {
+    const currentMedia = mediaSlides[currentSlide];
+    
+    if (currentMedia.type === 'video' && videoRef.current) {
+      setIsVideoPlaying(true);
+      videoRef.current.play().catch(err => {
+        console.error('Error playing video:', err);
+        setIsVideoPlaying(false);
+      });
+    }
+  }, [currentSlide]);
+  
+  // Handle video end event
+  const handleVideoEnded = () => {
+    setIsVideoPlaying(false);
+    // Immediately switch back to original image
+    setCurrentSlide(0);
+  };
+  
   return (
     <>
       <style>{`
@@ -84,22 +126,63 @@ function HeroSection({
         id={id}
         className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black"
       >
-        {/* Background Image with Sepia and Parallax */}
-        <motion.div
-          className="absolute inset-0 hero-bg-mobile"
-          style={{
-            backgroundImage: `url(${backgroundImageUrl})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center center",
-            backgroundRepeat: "no-repeat",
-            filter: "sepia(0.4) contrast(1.1) brightness(0.9)",
-            y: backgroundY,
-            opacity: opacity,
-            willChange: "transform, opacity",
-            transform: "translateZ(0)",
-            backfaceVisibility: "hidden",
-          }}
-        />
+        {/* Background Media with Sepia and Parallax */}
+        <div className="absolute inset-0" style={{ zIndex: 0 }}>
+          {mediaSlides.map((media, index) => {
+            const isActive = index === currentSlide;
+            
+            if (media.type === 'image') {
+              return (
+                <motion.div
+                  key={`image-${index}`}
+                  className="absolute inset-0 hero-bg-mobile"
+                  initial={{ opacity: index === 0 ? 1 : 0 }}
+                  animate={{ opacity: isActive ? 1 : 0 }}
+                  transition={{ duration: 1.5, ease: "easeInOut" }}
+                  style={{
+                    backgroundImage: `url(${media.url})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center center",
+                    backgroundRepeat: "no-repeat",
+                    filter: "sepia(0.4) contrast(1.1) brightness(0.9)",
+                    y: backgroundY,
+                    willChange: "transform, opacity",
+                    transform: "translateZ(0)",
+                    backfaceVisibility: "hidden",
+                  }}
+                />
+              );
+            } else if (media.type === 'video') {
+              return (
+                <motion.div
+                  key={`video-${index}`}
+                  className="absolute inset-0"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: isActive ? 1 : 0 }}
+                  transition={{ duration: 1.5, ease: "easeInOut" }}
+                  style={{
+                    willChange: "opacity",
+                  }}
+                >
+                  <video
+                    ref={videoRef}
+                    className="w-full h-full object-cover"
+                    style={{
+                      filter: "sepia(0.4) contrast(1.1) brightness(0.9)",
+                    }}
+                    muted
+                    playsInline
+                    onEnded={handleVideoEnded}
+                  >
+                    <source src={media.url} type="video/webm" />
+                  </video>
+                </motion.div>
+              );
+            }
+            return null;
+          })}
+        </div>
+        
         {/* Gradient Overlay */}
         <motion.div
           className="absolute inset-0"
@@ -107,6 +190,7 @@ function HeroSection({
             background: "linear-gradient(135deg, rgba(139,69,19,0.3) 0%, rgba(0,0,0,0.6) 50%, rgba(25,25,112,0.4) 100%)",
             opacity: opacity,
             willChange: "opacity",
+            zIndex: 1,
           }}
         />
       <motion.div 
@@ -115,6 +199,7 @@ function HeroSection({
           y: contentY,
           willChange: "transform",
           transform: "translateZ(0)",
+          zIndex: 10,
         }}
       >
         <div className="relative w-full pt-24 md:pt-20 pb-10">
