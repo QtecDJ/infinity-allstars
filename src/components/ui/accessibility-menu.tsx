@@ -112,11 +112,11 @@ export function AccessibilityMenu() {
         onClick={() => setIsOpen(!isOpen)}
         size="icon"
         variant="outline"
-        className="fixed bottom-6 right-6 z-[60] w-12 h-12 md:w-14 md:h-14 rounded-full shadow-2xl bg-primary hover:bg-primary/90 text-white border-2 border-white/20"
+        className="fixed bottom-6 right-6 z-[60] w-12 h-12 rounded-full shadow-2xl bg-primary hover:bg-primary/90 text-white border-2 border-white/20"
         aria-label={t('accessibility.toggle', { defaultValue: 'Barrierefreiheit-Menü öffnen' })}
         title={t('accessibility.toggle', { defaultValue: 'Barrierefreiheit-Menü' })}
       >
-        <Accessibility className="h-5 w-5 md:h-6 md:w-6" />
+        <Accessibility className="h-5 w-5" />
       </Button>
 
       {/* Accessibility Menu */}
