@@ -14,7 +14,7 @@ export function SEO({
   description, 
   keywords, 
   image = '/media/ica/infinity-kings-queens.jpg',
-  url = 'https://site.icacheer.space'
+  url = 'https://side.icacheer.space'
 }: SEOProps = {}) {
   const { t, i18n } = useTranslation();
   
