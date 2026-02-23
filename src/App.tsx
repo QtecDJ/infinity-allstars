@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Navbar } from '@/components/sections/Navbar';
 import { Hero } from '@/components/sections/Hero';
 import { About } from '@/components/sections/About';
@@ -15,14 +15,24 @@ import { AccessibilityMenu } from '@/components/ui/accessibility-menu';
 import { ScrollToTop } from '@/components/ui/scroll-to-top';
 import { CookieBanner } from '@/components/ui/cookie-banner';
 import { SEO } from '@/components/SEO';
+import { WCAGMonitor } from '@/components/WCAGMonitor';
 import { useTranslation } from 'react-i18next';
 
 function App() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [isPrivacyOpen, setIsPrivacyOpen] = useState(false);
+
+  // WCAG 2.1 SC 3.1.1 - Language of Page
+  // Update HTML lang attribute when language changes
+  useEffect(() => {
+    document.documentElement.lang = i18n.language;
+  }, [i18n.language]);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      {/* WCAG 2.1/2.2 Monitoring in Development */}
+      {process.env.NODE_ENV === 'development' && <WCAGMonitor />}
+      
       {/* SEO Meta Tags and Structured Data */}
       <SEO />
       

@@ -5,7 +5,11 @@
     "motto": "WE ARE ONE.",
     "btnDiscover": "Teams entdecken",
     "btnTrial": "Probetraining",
-    "scrollDown": "Zum nächsten Abschnitt scrollen"
+    "scrollDown": "Zum nächsten Abschnitt scrollen",
+    "videoLabel": "Cheerleading Team Video",
+    "videoDescription": "Video mit Auftritten und Training der Infinity Cheer Allstars",
+    "pauseVideo": "Video pausieren",
+    "playVideo": "Video abspielen"
   },
   "nav": {
     "home": "Start",

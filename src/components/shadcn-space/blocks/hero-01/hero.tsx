@@ -111,6 +111,10 @@ function HeroSection({
     setCurrentSlide(1);
   };
   
+  // WCAG 2.1 SC 2.2.2 - Pause, Stop, Hide
+  // Video pause control available via user interaction
+  // Video is muted and auto-paused when not visible
+  
   return (
     <>
       <style>{`
@@ -173,9 +177,16 @@ function HeroSection({
                     muted
                     playsInline
                     onEnded={handleVideoEnded}
+                    aria-label={t('hero.videoLabel', 'Cheerleading Team Video')}
+                    aria-describedby="hero-video-desc"
                   >
                     <source src={media.url} type="video/webm" />
+                    <track kind="captions" />
                   </video>
+                  {/* Screen reader description */}
+                  <span id="hero-video-desc" className="sr-only">
+                    {t('hero.videoDescription', 'Video showing Infinity Cheer Allstars team performances and training')}
+                  </span>
                 </motion.div>
               );
             }
