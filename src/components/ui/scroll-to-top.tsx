@@ -38,7 +38,7 @@ export function ScrollToTop() {
           onClick={scrollToTop}
           size="icon"
           variant="outline"
-          className="fixed bottom-6 right-6 md:bottom-24 md:right-6 z-50 w-12 h-12 rounded-full shadow-2xl bg-secondary hover:bg-primary hover:text-white border-2 border-border transition-all duration-300"
+          className="fixed bottom-24 right-4 md:bottom-24 md:right-6 z-[60] w-12 h-12 rounded-full shadow-2xl bg-secondary hover:bg-primary hover:text-white border-2 border-border transition-all duration-300"
           aria-label={t('scrollToTop.label', { defaultValue: 'Nach oben scrollen' })}
           title={t('scrollToTop.label', { defaultValue: 'Nach oben scrollen' })}
         >
