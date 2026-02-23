@@ -24,7 +24,11 @@ const WhatsAppIcon = () => (
   </svg>
 );
 
-export function Footer() {
+interface FooterProps {
+  onOpenPrivacy: () => void;
+}
+
+export function Footer({ onOpenPrivacy }: FooterProps) {
   const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
@@ -186,7 +190,15 @@ export function Footer() {
         <Separator className="my-8" />
 
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
-          <p>{t('footer.copyright', { year: currentYear })}</p>
+          <div className="flex flex-col md:flex-row items-center gap-4">
+            <p>{t('footer.copyright', { year: currentYear })}</p>
+            <button
+              onClick={onOpenPrivacy}
+              className="hover:text-primary transition-colors underline-offset-4 hover:underline"
+            >
+              {t('privacy.title')}
+            </button>
+          </div>
           <p>
             Mit <span className="text-primary">♥</span> in{' '}
             <a

@@ -172,5 +172,149 @@
       "businessOffice": "Business Office"
     },
     "copyright": "© {{year}} Infinity Cheer Allstars, TSV Plattenhardt e.V. All rights reserved."
+  },
+  "accessibility": {
+    "toggle": "Open/Close Accessibility Menu",
+    "title": "Accessibility",
+    "close": "Close",
+    "skipToContent": "Skip to main content",
+    "mainContent": "Main content",
+    "fontSize": "Font Size",
+    "decreaseFont": "Decrease font size",
+    "increaseFont": "Increase font size",
+    "highContrast": "High Contrast",
+    "toggleHighContrast": "Toggle high contrast",
+    "reducedMotion": "Reduce Motion",
+    "toggleReducedMotion": "Toggle reduced motion",
+    "largerCursor": "Larger Cursor",
+    "toggleLargerCursor": "Toggle larger cursor",
+    "on": "On",
+    "off": "Off",
+    "reset": "Reset All Settings",
+    "info": "These settings are saved locally in your browser and will persist on your next visit."
+  },
+  "seo": {
+    "description": "Cheerleading in Filderstadt-Plattenhardt: Infinity Cheer Allstars at TSV Plattenhardt 1895 e.V. offers professional cheerleading training for all ages. From youth to competitive teams – WE ARE ONE.",
+    "keywords": "Cheerleading Plattenhardt, Cheerleading Filderstadt, TSV Plattenhardt, Infinity Cheer Allstars, Cheerleading Stuttgart, Cheerleading Baden-Württemberg, Cheerleading Training, Cheer Club Germany, CCVD, Cheerleading Germany, Youth Sports Filderstadt"
+  },
+  "scrollToTop": {
+    "label": "Scroll to top"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "close": "Close",
+    "lastUpdated": "Last updated: {{date}}",
+    "responsible": {
+      "title": "Responsible Party",
+      "name": "TSV Plattenhardt 1895 e.V.",
+      "street": "Lerchenstraße 2",
+      "city": "70794 Filderstadt, Germany",
+      "email": "info@icacheer.space",
+      "phone": "+49 711 45 90 94 40"
+    },
+    "dataProcessing": {
+      "title": "Data Processing on This Website",
+      "localStorage": {
+        "title": "LocalStorage (Browser Storage)",
+        "description": "This website uses LocalStorage to store your settings (accessibility settings, language, cookie consent) locally in your browser. This data is not transmitted to a server and remains exclusively on your device.",
+        "legalBasis": "Legal basis: Art. 6 (1) lit. f GDPR (legitimate interest in providing a user-friendly website)."
+      },
+      "googleFonts": {
+        "title": "Google Fonts",
+        "description": "This website uses Google Fonts for displaying typefaces. When you visit our pages, your browser establishes a connection to Google servers, which may allow Google to recognize your IP address.",
+        "legalBasis": "Legal basis: Art. 6 (1) lit. f GDPR (legitimate interest in consistent visual presentation).",
+        "provider": "Provider: Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland"
+      }
+    },
+    "cookies": {
+      "title": "Cookies",
+      "description": "This website does not use its own cookies. Google Fonts may set cookies for technical purposes. You can prevent the use of Google Fonts in our cookie settings."
+    },
+    "rights": {
+      "title": "Your Rights",
+      "description": "You have the following rights regarding your personal data:",
+      "info": {
+        "title": "Right to Information (Art. 15 GDPR)",
+        "description": "You can request confirmation as to whether we process your data."
+      },
+      "rectification": {
+        "title": "Right to Rectification (Art. 16 GDPR)",
+        "description": "You can request the correction of incorrect data."
+      },
+      "erasure": {
+        "title": "Right to Erasure (Art. 17 GDPR)",
+        "description": "You can request the deletion of your data."
+      },
+      "restriction": {
+        "title": "Right to Restriction (Art. 18 GDPR)",
+        "description": "You can request the restriction of processing."
+      },
+      "dataPortability": {
+        "title": "Right to Data Portability (Art. 20 GDPR)",
+        "description": "You can request your data in a machine-readable format."
+      },
+      "objection": {
+        "title": "Right to Object (Art. 21 GDPR)",
+        "description": "You can object to the processing of your data."
+      },
+      "contact": "To exercise your rights, please contact: info@icacheer.space"
+    },
+    "hosting": {
+      "title": "Hosting",
+      "description": "This website is hosted on GitHub Pages. When you visit our website, GitHub may record access data (IP address, date, time, pages accessed). For more information, please see GitHub's Privacy Policy."
+    },
+    "changes": {
+      "title": "Changes to This Privacy Policy",
+      "description": "We reserve the right to update this privacy policy to reflect changes in legal requirements or our services."
+    }
+  },
+  "cookies": {
+    "title": "Cookie Settings",
+    "subtitle": "We respect your privacy",
+    "close": "Close",
+    "description": "This website only uses essential local storage (localStorage) for accessibility settings. External services like Google Fonts are only loaded with your consent.",
+    "acceptAll": "Accept all",
+    "essentialOnly": "Essential only",
+    "customize": "Customize",
+    "moreInfo": "More information in our privacy policy",
+    "savePreferences": "Save preferences",
+    "back": "Back",
+    "required": "Required",
+    "enabled": "On",
+    "disabled": "Off",
+    "notUsed": "Not active",
+    "essential": {
+      "title": "Essential Storage",
+      "description": "Required for accessibility features (font size, contrast). These cannot be disabled."
+    },
+    "functional": {
+      "title": "Functional Services",
+      "description": "External services like Google Fonts for optimal display."
+    },
+    "analytics": {
+      "title": "Analytics & Statistics",
+      "description": "Currently not used. No analytics or tracking."
+    },
+    "banner": {
+      "title": "Cookie Settings",
+      "subtitle": "Your privacy matters to us",
+      "description": "We only use essential storage for accessibility settings. External services like Google Fonts are only loaded with your consent.",
+      "showDetails": "Show details",
+      "hideDetails": "Hide details",
+      "acceptAll": "Accept all",
+      "rejectOptional": "Essential only",
+      "savePreferences": "Save selection",
+      "privacyLink": "Read privacy policy",
+      "required": "Required",
+      "optional": "Optional",
+      "essential": {
+        "title": "Essential Storage (LocalStorage)",
+        "description": "Stores your accessibility settings, language preference, and cookie choices locally in your browser. This data is not transmitted to any server."
+      },
+      "googleFonts": {
+        "title": "Google Fonts",
+        "description": "Loads fonts from Google servers for optimal typographic display. Your IP address may be transmitted to Google."
+      }
+    }
   }
 }

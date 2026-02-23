@@ -172,5 +172,149 @@
       "businessOffice": "Geschäftsstelle"
     },
     "copyright": "© {{year}} Infinity Cheer Allstars, TSV Plattenhardt e.V. Alle Rechte vorbehalten."
+  },
+  "accessibility": {
+    "toggle": "Barrierefreiheit-Menü öffnen/schließen",
+    "title": "Barrierefreiheit",
+    "close": "Schließen",
+    "skipToContent": "Zum Hauptinhalt springen",
+    "mainContent": "Hauptinhalt",
+    "fontSize": "Schriftgröße",
+    "decreaseFont": "Schrift verkleinern",
+    "increaseFont": "Schrift vergrößern",
+    "highContrast": "Hoher Kontrast",
+    "toggleHighContrast": "Hohen Kontrast umschalten",
+    "reducedMotion": "Bewegung reduzieren",
+    "toggleReducedMotion": "Bewegungsreduktion umschalten",
+    "largerCursor": "Größerer Mauszeiger",
+    "toggleLargerCursor": "Größeren Mauszeiger umschalten",
+    "on": "An",
+    "off": "Aus",
+    "reset": "Alle Einstellungen zurücksetzen",
+    "info": "Diese Einstellungen werden lokal in Ihrem Browser gespeichert und bleiben beim nächsten Besuch erhalten."
+  },
+  "seo": {
+    "description": "Cheerleading in Filderstadt-Plattenhardt: Die Infinity Cheer Allstars im TSV Plattenhardt 1895 e.V. bieten professionelles Cheerleading-Training für alle Altersgruppen. Vom Nachwuchs bis zum Wettkampfteam – WE ARE ONE.",
+    "keywords": "Cheerleading Plattenhardt, Cheerleading Filderstadt, TSV Plattenhardt, Infinity Cheer Allstars, Cheerleading Stuttgart, Cheerleading Baden-Württemberg, Cheerleading Training, Cheerleading Verein, CCVD, Cheerleading Deutschland, Kindersport Filderstadt, Turnen Plattenhardt, Akrobatik Filderstadt, Cheerleading Esslingen, Cheerleading Ludwigsburg"
+  },
+  "scrollToTop": {
+    "label": "Nach oben scrollen"
+  },
+  "privacy": {
+    "title": "Datenschutzerklärung",
+    "close": "Schließen",
+    "lastUpdated": "Stand: {{date}}",
+    "responsible": {
+      "title": "1. Verantwortlicher",
+      "name": "TSV Plattenhardt 1895 e.V.",
+      "street": "Lerchenstraße 2",
+      "city": "70794 Filderstadt, Deutschland",
+      "email": "cheerleader@tsvplattenhardt.de",
+      "phone": "+49 176 74798642"
+    },
+    "dataProcessing": {
+      "title": "2. Datenverarbeitung auf dieser Website",
+      "localStorage": {
+        "title": "Lokale Speicherung (LocalStorage)",
+        "description": "Diese Website verwendet LocalStorage, um Ihre Einstellungen (Barrierefreiheits-Einstellungen, Sprachauswahl, Cookie-Einwilligung) lokal in Ihrem Browser zu speichern. Diese Daten werden nicht an einen Server übertragen und verbleiben ausschließlich auf Ihrem Gerät.",
+        "legalBasis": "Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Bereitstellung einer nutzerfreundlichen Website)."
+      },
+      "googleFonts": {
+        "title": "Google Fonts",
+        "description": "Diese Website nutzt Google Fonts zur Darstellung von Schriftarten. Beim Aufruf unserer Seiten baut Ihr Browser eine Verbindung zu Google-Servern auf, wodurch Google Ihre IP-Adresse erkennen kann.",
+        "legalBasis": "Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer einheitlichen visuellen Darstellung).",
+        "provider": "Anbieter: Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland"
+      }
+    },
+    "cookies": {
+      "title": "3. Cookies",
+      "description": "Diese Website setzt keine eigenen Cookies. Google Fonts kann zu technischen Zwecken Cookies setzen. Sie können die Verwendung von Google Fonts in unseren Cookie-Einstellungen verhindern."
+    },
+    "rights": {
+      "title": "4. Ihre Rechte",
+      "description": "Sie haben folgende Rechte bezüglich Ihrer personenbezogenen Daten:",
+      "info": {
+        "title": "Recht auf Auskunft (Art. 15 DSGVO)",
+        "description": "Sie können eine Bestätigung darüber verlangen, ob wir Ihre Daten verarbeiten."
+      },
+      "rectification": {
+        "title": "Recht auf Berichtigung (Art. 16 DSGVO)",
+        "description": "Sie können die Korrektur unrichtiger Daten verlangen."
+      },
+      "erasure": {
+        "title": "Recht auf Löschung (Art. 17 DSGVO)",
+        "description": "Sie können die Löschung Ihrer Daten verlangen."
+      },
+      "restriction": {
+        "title": "Recht auf Einschränkung (Art. 18 DSGVO)",
+        "description": "Sie können die Einschränkung der Verarbeitung verlangen."
+      },
+      "dataPortability": {
+        "title": "Recht auf Datenübertragbarkeit (Art. 20 DSGVO)",
+        "description": "Sie können Ihre Daten in einem maschinenlesbaren Format anfordern."
+      },
+      "objection": {
+        "title": "Recht auf Widerspruch (Art. 21 DSGVO)",
+        "description": "Sie können der Verarbeitung Ihrer Daten widersprechen."
+      },
+      "contact": "Zur Ausübung Ihrer Rechte kontaktieren Sie uns bitte unter: cheerleader@tsvplattenhardt.de"
+    },
+    "hosting": {
+      "title": "5. Hosting",
+      "description": "Diese Website wird auf GitHub Pages gehostet. Wenn Sie unsere Website besuchen, kann GitHub Zugriffsdaten (IP-Adresse, Datum, Uhrzeit, aufgerufene Seiten) erfassen. Weitere Informationen finden Sie in der Datenschutzerklärung von GitHub."
+    },
+    "changes": {
+      "title": "6. Änderungen dieser Datenschutzerklärung",
+      "description": "Wir behalten uns vor, diese Datenschutzerklärung anzupassen, um sie an geänderte rechtliche Anforderungen oder Änderungen unserer Dienste anzupassen."
+    }
+  },
+  "cookies": {
+    "title": "Cookie-Einstellungen",
+    "subtitle": "Wir respektieren deine Privatsphäre",
+    "close": "Schließen",
+    "description": "Diese Webseite nutzt nur essenzielle lokale Speicherung (localStorage) für Barrierefreiheits-Einstellungen. Externe Dienste wie Google Fonts werden nur mit deiner Zustimmung geladen.",
+    "acceptAll": "Alle akzeptieren",
+    "essentialOnly": "Nur essenzielle",
+    "customize": "Anpassen",
+    "moreInfo": "Weitere Informationen in unserer Datenschutzerklärung",
+    "savePreferences": "Einstellungen speichern",
+    "back": "Zurück",
+    "required": "Erforderlich",
+    "enabled": "An",
+    "disabled": "Aus",
+    "notUsed": "Nicht aktiv",
+    "essential": {
+      "title": "Essenzielle Speicherung",
+      "description": "Notwendig für Barrierefreiheits-Funktionen (Schriftgröße, Kontrast). Diese können nicht deaktiviert werden."
+    },
+    "functional": {
+      "title": "Funktionale Dienste",
+      "description": "Externe Dienste wie Google Fonts für optimale Darstellung."
+    },
+    "analytics": {
+      "title": "Analyse & Statistiken",
+      "description": "Derzeit nicht verwendet. Keine Analytics oder Tracking."
+    },
+    "banner": {
+      "title": "Cookie-Einstellungen",
+      "subtitle": "Ihre Privatsphäre ist uns wichtig",
+      "description": "Wir verwenden nur essenzielle Speicherung für Barrierefreiheits-Einstellungen. Externe Dienste wie Google Fonts werden nur mit Ihrer Zustimmung geladen.",
+      "showDetails": "Details anzeigen",
+      "hideDetails": "Details verbergen",
+      "acceptAll": "Alle akzeptieren",
+      "rejectOptional": "Nur essenzielle",
+      "savePreferences": "Auswahl speichern",
+      "privacyLink": "Datenschutzerklärung lesen",
+      "required": "Erforderlich",
+      "optional": "Optional",
+      "essential": {
+        "title": "Essenzielle Speicherung (LocalStorage)",
+        "description": "Speichert Ihre Barrierefreiheits-Einstellungen, Sprachauswahl und Cookie-Präferenzen lokal in Ihrem Browser. Diese Daten werden nicht an einen Server übertragen."
+      },
+      "googleFonts": {
+        "title": "Google Fonts",
+        "description": "Lädt Schriftarten von Google-Servern für eine optimale typografische Darstellung. Dabei kann Ihre IP-Adresse an Google übertragen werden."
+      }
+    }
   }
 }

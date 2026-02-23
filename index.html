@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="de" class="dark">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/media/icon/favicon.png" />
@@ -9,13 +9,34 @@
       name="description"
       content="Infinity Cheer Allstars – Cheerleading im TSV Plattenhardt 1895 e.V. (Filderstadt). WE ARE ONE."
     />
+    
+    <!-- Accessibility Meta Tags -->
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#FF6B35" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Infinity Cheer Allstars | TSV Plattenhardt" />
+    <meta property="og:description" content="Cheerleading im TSV Plattenhardt – Teamgeist, Respekt und Gemeinschaft. WE ARE ONE." />
+    
+    <!-- Preconnect for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    
     <title>Infinity Cheer Allstars | TSV Plattenhardt</title>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Accessibility: Announce Page Changes -->
+    <div 
+      role="status" 
+      aria-live="polite" 
+      aria-atomic="true" 
+      class="sr-only"
+      id="announce"
+    ></div>
   </body>
 </html>
