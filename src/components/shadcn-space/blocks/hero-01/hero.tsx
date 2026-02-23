@@ -30,8 +30,8 @@ function HeroSection({
   
   // Media slides configuration
   const mediaSlides = [
-    { type: 'image', url: getAssetPath("/media/ica/infinity-kings-queens.jpg") },
     { type: 'video', url: getAssetPath("/media/HeroMedia/icac.webm") },
+    { type: 'image', url: getAssetPath("/media/ica/infinity-kings-queens.jpg") },
   ];
   
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -81,10 +81,10 @@ function HeroSection({
   useEffect(() => {
     if (isVideoPlaying) return;
     
-    // Only auto-advance from original (slide 0) to video (slide 1)
-    if (currentSlide === 0) {
+    // Only auto-advance from image (slide 1) back to video (slide 0)
+    if (currentSlide === 1) {
       const timer = setTimeout(() => {
-        setCurrentSlide(1); // Go to video
+        setCurrentSlide(0); // Go back to video
       }, 8000);
       
       return () => clearTimeout(timer);
@@ -107,8 +107,8 @@ function HeroSection({
   // Handle video end event
   const handleVideoEnded = () => {
     setIsVideoPlaying(false);
-    // Immediately switch back to original image
-    setCurrentSlide(0);
+    // Switch to image after video ends
+    setCurrentSlide(1);
   };
   
   return (
@@ -136,7 +136,7 @@ function HeroSection({
                 <motion.div
                   key={`image-${index}`}
                   className="absolute inset-0 hero-bg-mobile"
-                  initial={{ opacity: index === 0 ? 1 : 0 }}
+                  initial={{ opacity: 0 }}
                   animate={{ opacity: isActive ? 1 : 0 }}
                   transition={{ duration: 1.5, ease: "easeInOut" }}
                   style={{
@@ -157,7 +157,7 @@ function HeroSection({
                 <motion.div
                   key={`video-${index}`}
                   className="absolute inset-0"
-                  initial={{ opacity: 0 }}
+                  initial={{ opacity: index === 0 ? 1 : 0 }}
                   animate={{ opacity: isActive ? 1 : 0 }}
                   transition={{ duration: 1.5, ease: "easeInOut" }}
                   style={{
