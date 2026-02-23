@@ -150,21 +150,36 @@ export function Footer() {
             </div>
           ))}
 
-          <div className="flex flex-col items-center">
-            <h4 className="font-semibold mb-4">Verbandsmitglied</h4>
-            <a
-              href="https://cheersport.de/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:opacity-80 transition-opacity"
-              aria-label="CCVD - Cheerleading und Cheersport Verband Deutschland"
-            >
-              <img
-                src={getAssetPath('/media/ica/ccvd.webp')}
-                alt="CCVD Logo"
-                className="w-auto h-24 object-contain"
-              />
-            </a>
+          <div className="flex flex-col items-start">
+            <h4 className="font-semibold mb-4">Partner & Verbände</h4>
+            <div className="flex items-center gap-6">
+              <a
+                href="https://www.tsvplattenhardt.de/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:opacity-80 transition-opacity"
+                aria-label="TSV Plattenhardt 1895 e.V."
+              >
+                <img
+                  src={getAssetPath('/media/ica/tsvlogo.webp')}
+                  alt="TSV Plattenhardt Logo"
+                  className="w-auto h-16 object-contain"
+                />
+              </a>
+              <a
+                href="https://cheersport.de/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:opacity-80 transition-opacity"
+                aria-label="CCVD - Cheerleading und Cheersport Verband Deutschland"
+              >
+                <img
+                  src={getAssetPath('/media/ica/ccvd.webp')}
+                  alt="CCVD Logo"
+                  className="w-auto h-16 object-contain"
+                />
+              </a>
+            </div>
           </div>
         </div>
 
