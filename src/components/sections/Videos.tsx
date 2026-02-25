@@ -1,14 +1,15 @@
 import { useState } from 'react';
 import { Separator } from '@/components/ui/separator';
 import { Card } from '@/components/ui/card';
-import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
-import { Play } from 'lucide-react';
+import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
+import { Play, X } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 type Video = {
   title: string;
   platform: 'instagram' | 'tiktok';
   url: string;
+  embedUrl: string;
   thumbnail?: string;
 };
 
@@ -21,26 +22,16 @@ export function Videos() {
       title: 'Team Performance',
       platform: 'instagram',
       url: 'https://www.instagram.com/reel/C6CU2X_qCAB/',
+      embedUrl: 'https://www.instagram.com/reel/C6CU2X_qCAB/embed',
     },
     {
       title: 'TikTok Performance',
       platform: 'tiktok',
       url: 'https://www.tiktok.com/@infinitycheerallstars/video/7231606496025431322',
+      embedUrl: 'https://www.tiktok.com/embed/v2/7231606496025431322',
     },
     // Weitere Videos hier hinzufügen
   ];
-
-  // Extrahiere TikTok Video-ID aus URL
-  const getTikTokVideoId = (url: string): string => {
-    const match = url.match(/\/video\/(\d+)/);
-    return match ? match[1] : '';
-  };
-
-  // Extrahiere Instagram Reel-ID aus URL
-  const getInstagramId = (url: string): string => {
-    const match = url.match(/\/(p|reel|tv)\/([A-Za-z0-9_-]+)/);
-    return match ? match[2] : '';
-  };
 
   return (
     <section id="videos" className="py-24 bg-muted/30">
@@ -61,6 +52,15 @@ export function Videos() {
               key={index} 
               className="overflow-hidden border-border hover:border-primary/50 transition-all cursor-pointer group"
               onClick={() => setSelectedVideo(video)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  setSelectedVideo(video);
+                }
+              }}
+              aria-label={`${t('aria.openVideo')}: ${video.title}`}
             >
               <div className="relative bg-gradient-to-b from-black/50 to-black/80 aspect-[9/16] flex items-center justify-center">
                 <div className="absolute inset-0 bg-primary/10 group-hover:bg-primary/20 transition-colors" />
@@ -76,42 +76,34 @@ export function Videos() {
         </div>
       </div>
 
-      {/* Video Modal */}
+      {/* Video Dialog */}
       <Dialog open={!!selectedVideo} onOpenChange={() => setSelectedVideo(null)}>
-        <DialogContent className="max-w-[95vw] sm:max-w-[550px] p-0 bg-black border-0 max-h-[92vh] overflow-hidden">
+        <DialogContent className="max-w-[95vw] sm:max-w-[500px] md:max-w-[600px] p-0 bg-black border border-primary/20">
           <DialogTitle className="sr-only">
             {selectedVideo?.title || 'Video'}
           </DialogTitle>
-          <DialogDescription className="sr-only">
-            {selectedVideo?.platform === 'instagram' ? 'Instagram' : 'TikTok'} Video
-          </DialogDescription>
+          
+          {/* Close Button */}
+          <button
+            onClick={() => setSelectedVideo(null)}
+            className="absolute -top-10 right-0 z-50 p-2 rounded-full bg-background/80 hover:bg-background text-foreground transition-colors"
+            aria-label="Video schließen"
+          >
+            <X className="w-5 h-5" />
+          </button>
+
           {selectedVideo && (
-            <div className="relative w-full bg-black overflow-hidden rounded-lg" style={{ height: '75vh', maxHeight: '800px' }}>
-              {selectedVideo.platform === 'instagram' ? (
-                <iframe
-                  src={`https://www.instagram.com/reel/${getInstagramId(selectedVideo.url)}/embed`}
-                  className="w-full h-full"
-                  frameBorder="0"
-                  scrolling="no"
-                  allowFullScreen
-                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; accelerometer; gyroscope"
-                  title={selectedVideo.title}
-                  style={{ maxWidth: '100%', maxHeight: '100%' }}
-                />
-              ) : (
-                <div className="w-full h-full flex items-center justify-center overflow-hidden">
-                  <iframe
-                    src={`https://www.tiktok.com/embed/v2/${getTikTokVideoId(selectedVideo.url)}`}
-                    className="w-full h-full"
-                    frameBorder="0"
-                    scrolling="no"
-                    allowFullScreen
-                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; accelerometer; gyroscope"
-                    title={selectedVideo.title}
-                    style={{ maxWidth: '100%', maxHeight: '100%' }}
-                  />
-                </div>
-              )}
+            <div className="relative w-full bg-black overflow-hidden" style={{ aspectRatio: '9/16', maxHeight: '80vh' }}>
+              <iframe
+                src={selectedVideo.embedUrl}
+                className="w-full h-full"
+                frameBorder="0"
+                scrolling="no"
+                allowFullScreen
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                title={selectedVideo.title}
+                loading="lazy"
+              />
             </div>
           )}
         </DialogContent>

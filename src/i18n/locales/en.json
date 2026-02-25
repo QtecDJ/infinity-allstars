@@ -320,5 +320,8 @@
         "description": "Loads fonts from Google servers for optimal typographic display. Your IP address may be transmitted to Google."
       }
     }
+  },
+  "aria": {
+    "openVideo": "Open video"
   }
 }

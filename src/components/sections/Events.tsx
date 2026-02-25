@@ -1,6 +1,5 @@
 import { Separator } from '@/components/ui/separator';
-import { Button } from '@/components/ui/button';
-import { Calendar, MapPin, Clock, Ticket } from 'lucide-react';
+import { Calendar, MapPin, Clock } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { getAssetPath } from '@/utils/paths';
@@ -92,15 +91,6 @@ export function Events() {
                   <p className="text-muted-foreground leading-relaxed mb-6">
                     {event.description}
                   </p>
-
-                  <Button 
-                    className="w-full sm:w-auto group-hover:scale-105 transition-transform" 
-                    size="lg"
-                    onClick={() => window.open('https://form.jotform.com/260401385105345', '_blank')}
-                  >
-                    <Ticket className="w-5 h-5 mr-2" />
-                    {t('events.showcase.presale')}
-                  </Button>
                 </div>
               </div>
             </motion.div>

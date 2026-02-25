@@ -320,5 +320,8 @@
         "description": "Lädt Schriftarten von Google-Servern für eine optimale typografische Darstellung. Dabei kann Ihre IP-Adresse an Google übertragen werden."
       }
     }
+  },
+  "aria": {
+    "openVideo": "Video öffnen"
   }
 }
